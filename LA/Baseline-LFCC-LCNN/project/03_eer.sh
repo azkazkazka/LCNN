@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=3 python calculate_eer.py --scores=/home/sarah.azka/speech/LFCC/PA/Baseline-LFCC-LCNN/project/baseline_PA/log_eval_toy_eval_score.txt
