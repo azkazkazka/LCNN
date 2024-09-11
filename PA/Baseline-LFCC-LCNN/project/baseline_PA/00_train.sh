@@ -21,7 +21,7 @@ network_name=trained_network
 echo -e "Training"
 echo -e "Please monitor the log training: $PWD/${log_train_name}.txt\n"
 source $PWD/../../env.sh
-CUDA_VISIBLE_DEVICES=3 python main.py --model-forward-with-file-name \
+python main.py --model-forward-with-file-name \
        --num-workers 3 --epochs 50 \
        --batch-size 16 \
        --sampler block_shuffle_by_length \

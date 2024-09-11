@@ -13,7 +13,7 @@ trained_model=path_to_trained_model
 
 echo -e "Run evaluation"
 source $PWD/../../env.sh
-CUDA_VISIBLE_DEVICES=2 python main.py --inference --model-forward-with-file-name \
+python main.py --inference --model-forward-with-file-name \
        --trained-model ${trained_model}> ${log_name}.txt 2>${log_name}_err.txt
 cat ${log_name}.txt | grep "Output," | awk '{print $2" "$4}' | sed 's:,::g' > ${log_name}_score.txt
 echo -e "Process log has been written to $PWD/${log_name}.txt"
