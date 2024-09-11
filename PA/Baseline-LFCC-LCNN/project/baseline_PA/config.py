@@ -23,18 +23,18 @@ __copyright__ = "Copyright 2021, Xin Wang"
 # Name of datasets (any string you wish to use)
 #  after data preparation, trn/val_set_name are used to save statistics 
 #  about the data sets
-trn_set_name = 'cv_only_data_ta_pa_trn'
-val_set_name = 'cv_only_data_ta_pa_val'
+trn_set_name = 'trn_set'
+val_set_name = 'val_set'
 
 # for convenience
 #  we will use resources in this directory
-tmp = '/home/sarah.azka/speech/DATA_TA_PA'
+tmp = '/example/data/dir'
 
 # File lists (text file, one data name per line, without name extension)
 # trin_file_list: list of files for training set
-trn_list = tmp + '/train_cv_only.lst'  
+trn_list = tmp + '/train.lst'  
 # val_file_list: list of files for validation set. It can be None
-val_list = tmp + '/val_cv_only.lst'
+val_list = tmp + '/val.lst'
 
 # Directories for input features
 # input_dirs = [path_of_feature_1, path_of_feature_2, ..., ]
@@ -102,11 +102,11 @@ optional_argument = [tmp + '/protocol.txt']
 #########################################################
 # similar options to training stage
 
-test_set_name = 'prosa_only_to_cv_data_ta_pa_test'
+test_set_name = 'test_set'
 
 # List of test set data
 # for convenience, you may directly load test_set list here
-test_list = tmp + '/test_cv_only.lst'
+test_list = tmp + '/test.lst'
 
 # Directories for input features
 # input_dirs = [path_of_feature_1, path_of_feature_2, ..., ]

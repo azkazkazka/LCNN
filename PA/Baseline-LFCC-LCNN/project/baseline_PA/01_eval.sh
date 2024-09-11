@@ -8,9 +8,8 @@
 #   2. $: bash 01_eval.sh
 ########################
 
-log_name=log_eval_for_prosa_only_to_cv
-# trained_model=./__pretrained/trained_network.pt 
-trained_model=/home/sarah.azka/speech/LFCC/PA/Baseline-LFCC-LCNN/project/baseline_PA/trained_network_for_prosa_only.pt
+log_name=log_eval
+trained_model=path_to_trained_model
 
 echo -e "Run evaluation"
 source $PWD/../../env.sh
