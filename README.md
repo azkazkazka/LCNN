@@ -1,4 +1,4 @@
-# LFCC - K-Fold Adaptation
+# LCNN - K-Fold Adaptation
 
 This repository is an adaptation of the [ASVspoof 2021 LFCC-LCNN Baseline](https://github.com/asvspoof-challenge/2021/tree/main/LA/Baseline-LFCC-LCNN), with modifications to support k-fold cross-validation for model training and inference.
 
