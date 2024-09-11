@@ -6,55 +6,11 @@ baseline_LA: model and configuration files for LA baseline
 baseline_PA: model and configuration files for PA baseline
 baseline_DF: model and configuration files for DF baseline
 
-Usage (with a toy data set as example)
---------------------------------------
-1. Download pre-trained model and toy dataset
-   $: bash 00_download.sh
-
-2. If you simply want to evaluate trials using the pre-trained model
-   $: bash 01_wrapper_eval.sh
-
-   This first script shows the conveninent way to evaluate trials in one folder.
-   You just need to specify the path to the folder, the name of this trial set (any string),
-   and the path to the trained model.
-
-3. If you want to re-train the model and do evaluation 
-   $: bash 02_toy_example.sh
-
-   Walking through the second script shows how to use this project to train and evaluate
-   a data set. It is useful if you want to train a model using other data sets.
-
-   When using other datasets, the dataset directory and related configuration files must 
-   be prepared in advance. After running 02_toy_example.sh, you will see how the data set 
-   is prepared in DATA/toy_example. And you can check how configuration is done in */config.py
-
-Note that running the script for the first time will install conda dependency, which may
-take some time.
-
-Als note that the toy dataset is a tiny part of the ASVspoof2019 LA database, and it is 
-used as toy dataset for all the three baselines baseline_LA, baseline_PA, baseline_DF.
-
-Pre-trained models in baseline_LA and _DF were trained using ASVspoof2019 LA train set.
-That in baseline_PA was trained using ASVspoof2019 PA train set.
-
 
 Folder structure
 ----------------
 Files marked with '=' are generated after running 02_toy_example.sh.
 
-|- DATA: data directory for the toy dataset
-|  |= toy_example.tar.gz: toy dataset package
-|  |= toy_example
-|  |  |= protocol.txt: 
-|  |  |   protocol file
-|  |  |   this will be loaded by pytorch code for training and evaluation
-|  |  |= scp: 
-|  |  |   list of files for traing, dev, and eval
-|  |  |= train_dev: 
-|  |  |   waveform for train and validation sets   
-|  |  |= eval: 
-|  |  |   waveform for evaluation sets
-|
 |- baseline_LA: folder for baseline LA
 |  |  
 |  |  |- 00_train.sh: recipe to train the model
@@ -84,7 +40,7 @@ log_train.txt is self-explanable.
 
 log_eval_score.txt has two columns (see Note 2):
   File_name score
-  LA_E_1066571 19.160793
+  LA_E_1066571 1
 
 
 Note
@@ -94,10 +50,9 @@ Note
 2. Output score has this following format:
 
    File_name score
-   LA_E_1066571 19.160793
-   
-   The score is a scalar indicating how likely the trial is being bona fide (human voice).
-   A higher score means being more likely to be bona fide.
+   LA_E_1066571 1
+
+   A score of 1 equates to bona fide, while 0 is spoof.
 
 3. Accordingly, the code assumes 0 and 1 as the target labels for spoof and bona fide
    trials, respectively. 
